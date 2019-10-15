@@ -19,7 +19,7 @@ function getType(_url) {
 }
 
 var server = http.createServer(function (req, res) {
-	var url = "profsend" + (req.url.endsWith("/") ? req.url + "top.html" : req.url);
+	var url = "data" + (req.url.endsWith("/") ? req.url + "top.html" : req.url);
 	if (fs.existsSync(url)) {
 		fs.readFile(url, (err, data) => {
 			if (!err) {
