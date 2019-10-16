@@ -19,6 +19,7 @@ function getType(_url) {
 }
 
 var server = http.createServer(function (req, res) {
+var target = '';	
 switch (req.url){
    case '/':
    case '/top.html':			 
