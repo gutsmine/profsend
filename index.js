@@ -36,7 +36,6 @@ switch (req.url){
    return;
  }
 	
-	var url = "data" + (req.url.endsWith("/") ? req.url + "top.html" : req.url);
 	if (fs.existsSync(url)) {
 		fs.readFile(url, (err, data) => {
 			if (!err) {
