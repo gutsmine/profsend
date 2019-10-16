@@ -28,13 +28,16 @@ var target = '';
 switch (req.url){
    case '/':
    case '/top.html':			 
-   case '/top': target = top;
+   case '/top': 
+    target = top;
     break;
    case '/about':
-   case '/about.html': target = about;
+   case '/about.html': 
+    target = about;
    　break;
    case '/13update':
-   case '/13update.html': target = update;
+   case '/13update.html': 
+    target = update;
    　break;			 
    default:
    　res.writeHead(404,{'Content-Type':'text/plain'});
@@ -48,6 +51,4 @@ switch (req.url){
    res.write(data);
    res.end();
  });
-
-var port = process.env.PORT || 3000;
-server.listen(port);
+server.listen(1234);
