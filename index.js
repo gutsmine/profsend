@@ -37,19 +37,12 @@ switch (req.url){
    return;
  }
 	
-	if (fs.existsSync(url)) {
-		fs.readFile(url, (err, data) => {
-			if (!err) {
-                         res.writeHead(200, {"Content-Type": getType(url)});
-                         res.write(data);
-                         res.end();
-			} else {
-				res.statusCode = 500;
-				res.end();
-			}
-		});
-	} 
-});
+
+ fs.readFile(target,'utf-8',function(err,data){
+   res.writeHead(200,{'Content-Type':'text/html'});
+   res.write(data);
+   res.end();
+ });
 
 var port = process.env.PORT || 3000;
 server.listen(port);
