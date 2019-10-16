@@ -48,10 +48,7 @@ switch (req.url){
 				res.end();
 			}
 		});
-	} else {
-		res.statusCode = 404;
-		res.end();
-	}
+	} 
 });
 
 var port = process.env.PORT || 3000;
