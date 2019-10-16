@@ -40,7 +40,7 @@ switch (req.url){
 	if (fs.existsSync(url)) {
 		fs.readFile(url, (err, data) => {
 			if (!err) {
-                         res.writeHead(200,{'Content-Type':'text/html'});
+                         res.writeHead(200, {"Content-Type": getType(url)});
                          res.write(data);
                          res.end();
 			} else {
