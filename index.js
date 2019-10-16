@@ -19,12 +19,30 @@ function getType(_url) {
 }
 
 var server = http.createServer(function (req, res) {
+switch (req.url){
+   case '/':
+   case '/top.html':			 
+   case '/top': target = './data/top.html';
+    break;
+   case '/about':
+   case '/about.html': target = './data/about.html';
+   　break;
+   case '/13update':
+   case '/13update.html': target = './data/13update.html';
+   　break;			 
+   default:
+   　res.writeHead(404,{'Content-Type':'text/plain'});
+   　res.end('bad request');
+   return;
+ }
+	
 	var url = "data" + (req.url.endsWith("/") ? req.url + "top.html" : req.url);
 	if (fs.existsSync(url)) {
 		fs.readFile(url, (err, data) => {
 			if (!err) {
-				res.writeHead(200, {"Content-Type": getType(url)});
-				res.end(data);
+                         res.writeHead(200,{'Content-Type':'text/html'});
+                         res.write(data);
+                         res.end();
 			} else {
 				res.statusCode = 500;
 				res.end();
@@ -37,6 +55,4 @@ var server = http.createServer(function (req, res) {
 });
 
 var port = process.env.PORT || 3000;
-server.listen(port, function() {
-;
-});
+server.listen(port);
