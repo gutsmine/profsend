@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/gutsmine-tech/profsend-v2/issues"
   },
-  "homepage": "https://github.com/gutsmine-tech/profsend-v2#readme"
+  "homepage": "https://github.com/gutsmine-tech/profsend-v2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
 }

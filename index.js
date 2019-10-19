@@ -1,42 +1,23 @@
-var http = require("http");
-var fs = require('fs');
+var express = require('express')
+  , http = require('http')
+  , app = express()
+  ;
+app.use("/", express.static('./data/public'));
 
-function getType(_url) {
-	var types = {
-		".html": "text/html",
-		".css": "text/css",
-		".js": "text/javascript",
-		".png": "image/png",
-		".gif": "image/gif",
-		".svg": "svg+xml"
-	}
-	for (var key in types) {
-		if (_url.endsWith(key)) {
-			return types[key];
-		}
-	}
-	return "text/plain";
-}
-
-var server = http.createServer(function (req, res) {
-	var url = "data" + (req.url.endsWith("/") ? req.url + "top.html" : req.url);
-	if (fs.existsSync(url)) {
-		fs.readFile(url, (err, data) => {
-			if (!err) {
-				res.writeHead(200, {"Content-Type": getType(url)});
-				res.end(data);
-			} else {
-				res.statusCode = 500;
-				res.end();
-			}
-		});
-	} else {
-		res.statusCode = 404;
-		res.end();
-	}
+app.get('/', function(req, res) {
+    res.sendFile('./data/public/top.html', { root: __dirname });
 });
 
-var port = process.env.PORT || 3000;
-server.listen(port, function() {
-;
+app.get('/top.html', function(req, res) {
+    res.sendFile('./data/public/top.html', { root: __dirname });
 });
+
+app.get('/about.html', function(req, res) {
+    res.sendFile('./data/public/about/about.html', { root: __dirname });
+});
+
+app.get('/13update.html', function(req, res) {
+    res.sendFile('./data/public/13pudate/13pudate.html', { root: __dirname });
+});
+
+app.listen(3000)
