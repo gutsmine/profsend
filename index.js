@@ -13,11 +13,11 @@ app.get('/top.html', function(req, res) {
 });
 
 app.get('/about.html', function(req, res) {
-    res.sendFile('./data/public/about/about.html', { root: __dirname });
+    res.sendFile('./data/public/about.html', { root: __dirname });
 });
 
 app.get('/13update.html', function(req, res) {
-    res.sendFile('./data/public/13pudate/13pudate.html', { root: __dirname });
+    res.sendFile('./data/public/13pudate.html', { root: __dirname });
 });
 
 app.listen(app.get('port'))
