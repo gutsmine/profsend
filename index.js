@@ -15,4 +15,6 @@ app.use(function (req, res, next) {
   }
   next();
 });
-app.listen(app.get('port'))
+app.listen(app.get('port'), function () {
+console.log("Server started.");
+});
