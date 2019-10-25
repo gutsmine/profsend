@@ -38,10 +38,4 @@ app.use(function (req, res, next) {
   }
   next();
 });
-
-
-module.exports = router;
-
-app.listen(app.get('port'), function () {
-console.log("Server started.");
-});
+app.listen(app.get('port'));
