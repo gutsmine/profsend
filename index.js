@@ -5,20 +5,20 @@ var i18n = require("i18n");
 var router = require("express").Router();
 
 app.set("view engine", "ejs");
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 3000));
 app.use("/", express.static('./data/public'));
 
 router.get("/", (req, res) => {
-    res.render("./public/top.ejs");
+    res.render("./data/public/top.ejs");
 });
 router.get("/top.html", (req, res) => {
-    res.render("./top.ejs");
+    res.render("./data/public/top.ejs");
 });
 router.get("/about.html", (req, res) => {
-    res.render("./about.ejs");
+    res.render("./data/public/about.ejs");
 });
 router.get("/13update.html", (req, res) => {
-    res.render("./13update.ejs");
+    res.render("./data/public/13update.ejs");
 });
 
 i18n.configure({
