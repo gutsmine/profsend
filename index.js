@@ -4,7 +4,6 @@ var session = require('express-session');
 var i18n = require("i18n");
 
 app.set("view engine", "ejs");
-app.set('port', (process.env.PORT || 3000));
 app.use("/", express.static('./data/public'));
 app.use("/", require("./router.js"));
 i18n.configure({
@@ -12,7 +11,7 @@ i18n.configure({
   locales: ['ja', 'en'],
   defaultLocale: 'ja',
   // 辞書ファイルのありかを指定
-  directory: __dirname + "/locales",
+  directory: __dirname + "/data/locales",
   // オブジェクトを利用したい場合はtrue
   objectNotation: true
 });
@@ -24,4 +23,4 @@ app.use(function (req, res, next) {
   }
   next();
 });
-app.listen(app.get('port'));
+app.listen(3000);
