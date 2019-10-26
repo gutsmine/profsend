@@ -6,6 +6,7 @@ var router = require("express").Router();
 
 app.set("view engine", "ejs");
 app.use("/", express.static('./data/public'));
+app.use(express.favicon(express.favicon(__dirname + '/data/public/image/favicon.ico')));
 
 router.get("/", (req, res) => {
     res.render("./data/public/top.ejs");
