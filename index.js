@@ -20,4 +20,4 @@ app.get('/13update.html', function(req, res) {
     res.sendFile('./data/public/13pudate.html', { root: __dirname });
 });
 
-app.listen(app.get('port'))
+app.listen(app.get('port'));
