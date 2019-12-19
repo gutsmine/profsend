@@ -5,6 +5,7 @@
   "description": "profsend nodejs version",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "npm install",
     "start": "node index.js"
   },
   "repository": {
