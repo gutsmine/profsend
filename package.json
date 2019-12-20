@@ -7,6 +7,10 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines": {
+    "node": "v12.14.x",
+    "npm": "6.13.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gutsmine-tech/profsend-v2.git"
