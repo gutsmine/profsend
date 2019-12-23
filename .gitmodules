@@ -1,4 +1,3 @@
 [submodule "data"]
 	path = data
-	url = git://github.com/gutsmine-tech/profsend-v1
-	branch = v2-html
+	url = git://github.com/gutsmine/profsend-v1
