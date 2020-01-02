@@ -5,7 +5,7 @@
   "description": "profsend nodejs version",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "node index.js"
   },
   "engines": {
     "node": "v12.14.x",
