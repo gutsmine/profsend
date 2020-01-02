@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/profsend-v2
     docker: # Docker 
 
-      - image: circleci/node:4.8.2
+      - image: circleci/node:8.12.0
       - image: mongo:3.4.4 
     steps: 
       - checkout 
