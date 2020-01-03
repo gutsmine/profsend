@@ -21,4 +21,4 @@ app.get('/13update.html', function(req, res) {
     res.sendFile('13pudate.html', { root: __dirname + '/data/public/'});
 });
 
-app.listen(app.get('port'));
+module.exports = app
