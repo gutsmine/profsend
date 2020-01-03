@@ -6,8 +6,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --runInBand --ci"
+    "test": "jest"
+    "test;ci": "jest -i --ci --runInBand"
+
   },
+        "jest-junit": {
+        "suiteName": "jest tests",
+        "outputDirectory": "reports/jest",
+        "outputName": "js-test-results.xml",
+        "classNameTemplate": "{classname}-{title}",
+        "titleTemplate": "{classname}-{title}",
+        "ancestorSeparator": " ? "
+      },
   "engines": {
     "node": "v12.14.x",
     "npm": "6.13.x"
