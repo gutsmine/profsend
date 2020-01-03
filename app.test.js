@@ -2,9 +2,8 @@
 const app = require('./app')
 
 describe('アクセステスト', () => {
-    test('ステータスコード 200', () => {
-        return request(app).get("/").then(response => {
-            expect(response.statusCode).toBe(200)
-        })
-    });
-})
+  it('200 アクセス', async () => {
+    const response = await request(app).get("/");
+    expect(response.status).toBe(200);
+  });
+});
