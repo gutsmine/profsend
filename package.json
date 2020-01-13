@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "profsend nodejs version",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest",
-    "test;ci": "jest -i --ci --runInBand"
+    "start": "node server.js"
   },
   "engines": {
     "node": "v12.14.x",
