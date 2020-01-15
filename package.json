@@ -2,17 +2,13 @@
   "name": "profsend-v2",
   "version": "1.0.0",
   "description": "---",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-builder": "^1.0.0",
-    "express-packager": "^1.0.0",
     "jquery": "^3.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node server.js",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
