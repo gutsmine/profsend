@@ -16,8 +16,20 @@ app.get('/about.html', function(req, res) {
     res.sendFile('about.html', { root: __dirname + '/data/public/'});
 });
 
-app.get('/13update.html', function(req, res) {
-    res.sendFile('13pudate.html', { root: __dirname + '/data/public/'});
+app.get('/top', function(req, res) {
+    res.sendFile('top.html', { root: __dirname + '/data/public/'});
 });
 
-app.listen(app.get('port'));
+app.get('/about', function(req, res) {
+    res.sendFile('about.html', { root: __dirname + '/data/public/'});
+});
+
+app.get('/13update', function(req, res) {
+    res.sendFile('13update.html', { root: __dirname + '/data/public/'});
+});
+app.get('/13update.html', function(req, res) {
+    res.sendFile('13update.html', { root: __dirname + '/data/public/'});
+});
+
+
+ app.listen(app.get('port'));
