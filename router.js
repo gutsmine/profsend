@@ -28,4 +28,14 @@ router.get('/13update', function(req, res) {
 router.get('/13update.html', function(req, res) {
     res.sendFile('13update.html', { root: __dirname + '/data/public/'});
 });
+router.get('/top.pwa', function(req, res) {
+    res.sendFile('top.pwa.html', { root: __dirname + '/data/public/'});
+});
+router.get('/13update.pwa', function(req, res) {
+    res.sendFile('13update.pwa.html', { root: __dirname + '/data/public/'});
+});
+router.get('/about.pwa', function(req, res) {
+    res.sendFile('about.pwa.html', { root: __dirname + '/data/public/'});
+});
+
 module.exports = router;
