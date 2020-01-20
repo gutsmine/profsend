@@ -6,4 +6,5 @@ RUN apt-get install -y nodejs npm
 RUN git clone --depth 1 --recursive https://github.com/gutsmine/profsend-v2.git
 WORKDIR /profsend-v2
 RUN npm install
-CMD ["sh"]
+EXPOSE 8080
+CMD ["node", "app.js"]
