@@ -10,7 +10,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "heroku": "git push heroku master"
+    "build:docker": "docker build -t gutsmine/profsend-v2 . && docker push gutsmine/profsend-v2",
+    "build:push": "npm run build docker && heroku container:push web && heroku container:release web"
   },
   "repository": {
     "type": "git",
