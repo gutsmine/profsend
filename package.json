@@ -1,25 +1,26 @@
 {
   "name": "profsend-v2",
   "version": "1.0.0",
-  "description": "profsend nodejs version",
-  "main": "index.js",
+  "description": "---",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js",
+    "build": "docker build -t gutsmine/profsend-v2 . & docker push gutsmine/profsend-v2",
+    "heroku": "heroku container:push web & heroku container:release web"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gutsmine-tech/profsend-v2.git"
+    "url": "git+https://github.com/gutsmine/profsend-v2.git"
   },
-  "author": "gutsmine",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gutsmine-tech/profsend-v2/issues"
+    "url": "https://github.com/gutsmine/profsend-v2/issues"
   },
-  "homepage": "https://github.com/gutsmine-tech/profsend-v2#readme",
-  "dependencies": {
-    "ejs": "^2.7.1",
-    "express": "^4.17.1",
-    "express-session": "^1.17.0",
-    "i18n": "^0.8.3"
-  }
+  "homepage": "https://github.com/gutsmine/profsend-v2#readme"
 }
