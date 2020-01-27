@@ -1,9 +1,9 @@
 FROM node:lts-alpine
 
-WORKDIR /
-
 COPY . .
+
+WORKDIR /
 
 RUN npm install
 
-CMD npm run start
+CMD ["npm", "run", "start"]

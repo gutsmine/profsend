@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "build": "docker build -t gutsmine/profsend-v2 . & docker push gutsmine/profsend-v2",
+    "build": "docker build -t gutsmine/profsend . & docker push gutsmine/profsend",
     "heroku": "heroku container:push web & heroku container:release web"
   },
   "repository": {
