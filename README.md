@@ -1,10 +1,10 @@
-### profsend-v2
+### profsend
 
 ---
 
-このアプリはprofsendのnode.js移行版です
+このアプリはprofsendのnode.js版です
 
-詳しい情報はprofsendファイル内のREADMEを御覧ください。
+詳しい情報はviewディレクトリ内のREADMEを御覧ください。
 
 
 
