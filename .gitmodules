@@ -1,0 +1,4 @@
+[submodule "views"]
+	path = views
+	url = git://github.com/gumieProf/profsend-source
+	branch = master
