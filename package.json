@@ -4,6 +4,7 @@
   "description": "---",
   "main": "app.js",
   "dependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "webpack-utf8-bom": "^1.2.0"
@@ -11,8 +12,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "build": "docker build -t gutsmine/profsend . & docker push gutsmine/profsend",
-    "heroku": "heroku container:push web & heroku container:release web"
+    "build": "docker build -t gumieProf/profsend . & docker push gumieProf/profsend",
+    "heroku": "heroku container:push web -a profsend & heroku container:release web -a profsend"
   },
   "repository": {
     "type": "git",
