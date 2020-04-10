@@ -6,12 +6,14 @@
   "dependencies": {
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "forever": "^2.0.0",
     "jquery": "^3.4.1",
     "webpack-utf8-bom": "^1.2.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
+    "start": "forever ./",
+    "test": "nodemon ./",
     "build": "docker build -t gumieProf/profsend . & docker push gumieProf/profsend",
     "heroku": "heroku container:push web -a profsend & heroku container:release web -a profsend"
   },
