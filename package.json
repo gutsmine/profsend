@@ -4,16 +4,19 @@
   "description": "---",
   "main": "app.js",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "forever": "^2.0.0",
     "jquery": "^3.4.1",
     "webpack-utf8-bom": "^1.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
   "scripts": {
-    "start": "forever ./",
-    "test": "nodemon ./",
+    "start": "NODE_ENV=production forever ./",
+    "test": "nodemon -e js,ejs start ./",
     "build": "docker build -t gumieProf/profsend . & docker push gumieProf/profsend",
     "heroku": "heroku container:push web -a profsend & heroku container:release web -a profsend"
   },
