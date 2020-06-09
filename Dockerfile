@@ -4,6 +4,6 @@ COPY . .
 
 WORKDIR /
 
-RUN npm install
+RUN npm install --no-lockfile
 
 CMD ["npm", "run", "start"]
