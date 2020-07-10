@@ -35,5 +35,14 @@ router.get("/13update.pwa", function (req, res) {
 router.get("/about.pwa", function (req, res) {
   res.sendFile("about.pwa.html", { root: __dirname + "/views/public/" });
 });
+router.get("/scaner.html", function (req, res) {
+  res.sendFile("scaner.html", { root: __dirname + "/views/public/" });
+});
+router.get("/scaner", function (req, res) {
+  res.sendFile("scaner.html", { root: __dirname + "/views/public/" });
+});
+router.get("/scaner.html", function (req, res) {
+  res.sendFile("scaner.html", { root: __dirname + "/views/public/" });
+});
 
 module.exports = router;
