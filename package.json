@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=production forever ./",
-    "test": "nodemon -e js,ejs start ./",
+    "dev": "nodemon -e js,ejs start ./",
     "build": "docker build -t gumieProf/profsend . & docker push gumieProf/profsend",
     "heroku": "heroku container:push web -a profsend & heroku container:release web -a profsend"
   },
