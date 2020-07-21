@@ -1,30 +1,30 @@
 var router = require("express").Router();
 
 router.get("/", function (req, res) {
-  res.render("./public/top.ejs");
+  res.sendFile("top.html", { root: __dirname + "/views/public/" });
 });
 
 router.get("/top.html", function (req, res) {
-  res.render("./public/top.ejs");
+  res.sendFile("top.html", { root: __dirname + "/views/public/" });
 });
 
 router.get("/about.html", function (req, res) {
-  res.render("./public/about.ejs");
+  res.sendFile("about.html", { root: __dirname + "/views/public/" });
 });
 
 router.get("/top", function (req, res) {
-  res.render("./public/top.ejs");
+  res.sendFile("top.html", { root: __dirname + "/views/public/" });
 });
 
 router.get("/about", function (req, res) {
-  res.render("./public/about.ejs");
+  res.sendFile("about.html", { root: __dirname + "/views/public/" });
 });
 
 router.get("/13update", function (req, res) {
-  res.render("./public/13update.ejs");
+  res.sendFile("13update.html", { root: __dirname + "/views/public/" });
 });
 router.get("/13update.html", function (req, res) {
-  res.render("./public/13update.ejs");
+  res.sendFile("13update.html", { root: __dirname + "/views/public/" });
 });
 router.get("/top.pwa", function (req, res) {
   res.sendFile("top.pwa.html", { root: __dirname + "/views/public/" });
