@@ -4,7 +4,6 @@ var app = express();
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 app.set("port", process.env.PORT || 3000);
-app.set("view engine", "ejs");
 app.use("/", express.static(__dirname + "/views/public"));
 app.use("/script", express.static(__dirname + "/views/public/script"));
 app.use("/image", express.static(__dirname + "/views/public/image"));
