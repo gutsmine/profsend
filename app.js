@@ -8,6 +8,7 @@ app.use("/", express.static(__dirname + "/views/public"));
 app.use("/script", express.static(__dirname + "/views/public/script"));
 app.use("/image", express.static(__dirname + "/views/public/image"));
 app.use("/css", express.static(__dirname + "/views/public/css"));
+app.use("/font", express.static(__dirname + "/views/public/font"));
 
 app.use("/", require("./router.js"));
 
