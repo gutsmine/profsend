@@ -1,4 +1,4 @@
-var express = require("express");
+﻿var express = require("express");
 var helmet = require('helmet');
 var cookieParser = require("cookie-parser");
 var session = require('express-session')
@@ -8,10 +8,9 @@ app.use(cookieParser());
 app.use(session({
 	secret: 'Profsend is secure',
 	cookie: {
-	 secure: true,
-	 domain: "profsend.ga",
-	 sameSite: "lax" 
- }
+		secure: true,
+		sameSite: "lax"
+	}
 }));
 app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 app.set("port", process.env.PORT || 3000);

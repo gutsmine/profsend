@@ -1,6 +1,6 @@
-var router = require("express").Router();
+﻿var router = require("express").Router();
 var csrf = require('csurf');
-
+var fs = require("fs")
 var csrfProtection = csrf({ cookie: false });
 
 
@@ -42,5 +42,20 @@ router.get("/about.pwa", csrfProtection, function (req, res) {
 router.get("/pwa.top", csrfProtection, function (req, res) {
   res.sendFile("pwa.top.html", { root: __dirname + "/views/public/" });
 });
+router.get("/share/:id", csrfProtection, function (req, res) {
+  res.cookie('id', req.params.id)
+  res.sendFile("share.html", { root: __dirname + "/views/public/" });
+});
+const readJson = (filePath) => {
+  return new Promise(resolve => {
+    fs.readFile(filePath, (err, data) => {
+      resolve(JSON.parse(data))
+    })
+  })
+}
+
+router.get('/valut', (req, res) => {
+  readJson('valut.json').then(data => { res.json(data) })
+})
 
 module.exports = router;
