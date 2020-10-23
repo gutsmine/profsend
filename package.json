@@ -11,6 +11,7 @@
     "forever": "^3.0.2",
     "helmet": "^4.1.1",
     "jquery": "^3.5.1",
+    "npm-check-updates": "^9.1.2",
     "webpack-utf8-bom": "^1.2.0"
   },
   "devDependencies": {
