@@ -5,20 +5,21 @@
   "main": "app.js",
   "dependencies": {
     "cookie-parser": "^1.4.5",
-    "ejs": "^3.0.2",
+    "csurf": "^1.11.0",
     "express": "^4.17.1",
-    "forever": "^2.0.0",
-    "jquery": "^3.4.1",
+    "express-session": "^1.17.1",
+    "forever": "^3.0.2",
+    "helmet": "^4.1.1",
+    "jquery": "^3.5.1",
     "webpack-utf8-bom": "^1.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.6",
+    "npm-check-updates": "^9.2.2"
   },
   "scripts": {
     "start": "NODE_ENV=production forever ./",
-    "test": "nodemon -e js,ejs start ./",
-    "build": "docker build -t gumieProf/profsend . & docker push gumieProf/profsend",
-    "heroku": "heroku container:push web -a profsend & heroku container:release web -a profsend"
+    "dev": "nodemon -e js,ejs start ./"
   },
   "repository": {
     "type": "git",

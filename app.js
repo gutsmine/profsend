@@ -1,14 +1,24 @@
-var express = require("express");
+﻿var express = require("express");
+var helmet = require('helmet');
 var cookieParser = require("cookie-parser");
+var session = require('express-session')
+
 var app = express();
-var cookieParser = require("cookie-parser");
 app.use(cookieParser());
+app.use(session({
+	secret: 'Profsend is secure',
+	cookie: {
+		secure: true,
+		sameSite: "lax"
+	}
+}));
+app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 app.set("port", process.env.PORT || 3000);
-app.set("view engine", "ejs");
 app.use("/", express.static(__dirname + "/views/public"));
 app.use("/script", express.static(__dirname + "/views/public/script"));
 app.use("/image", express.static(__dirname + "/views/public/image"));
 app.use("/css", express.static(__dirname + "/views/public/css"));
+app.use("/font", express.static(__dirname + "/views/public/font"));
 
 app.use("/", require("./router.js"));
 
