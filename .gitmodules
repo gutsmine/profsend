@@ -1,4 +1,4 @@
 [submodule "views"]
 	path = views
-	url = git://github.com/gumieprof/profsend-source
+	url = git@github.com:gumieprof/profsend-source
 	branch = main
