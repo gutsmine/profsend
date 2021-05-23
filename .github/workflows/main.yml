@@ -26,13 +26,13 @@ jobs:
            npx ncu -u
            npm install
       -
-      name: "HerokuDeploy"
-      uses: akhileshns/heroku-deploy@v3.12.12
+        name: "HerokuDeploy"
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "profsend" #Must be unique in Heroku
-          heroku_email: "${{secrets.MY_EMAIL}}"
-          usedocker: true
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: "profsend"
+            heroku_email: "${{secrets.MY_EMAIL}}"
+            usedocker: true
         env:
           CI: true
         name: "repositry push"
