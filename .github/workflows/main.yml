@@ -2,10 +2,10 @@ name: Vulnerability check
 
 on:
   schedule:
-      - cron: '0 7 1 * *'
+    - cron: '0 7 1 * *'
   push:
-          branches:
-         - main
+    branches:
+      - main
 
 jobs:
   deploy:
