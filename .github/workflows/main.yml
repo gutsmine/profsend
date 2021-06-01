@@ -32,6 +32,7 @@ jobs:
       - env:
           CI: true
         name: "repositry push"
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "profsend_source-CI"
           git config user.email "gutsmine910@gmail.com"
@@ -43,7 +44,7 @@ jobs:
           git add .
           git commit -m "[CI]Vulnerability check ok"
           git push origin main
-      - if: ${{ github.ref == 'refs/heads/dev' }}
+      - if: github.ref == 'refs/heads/dev'
         run: |
           git config user.name "profsend_source-CI"
           git config user.email "gutsmine910@gmail.com"
