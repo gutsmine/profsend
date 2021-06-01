@@ -1,0 +1,48 @@
+name: Vulnerability check
+
+on:
+  schedule:
+    - cron: "0 7 1,15 * *"
+  push:
+    branches:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Use Node.js ${{ matrix.node-version }}"
+        uses: actions/setup-node@v1
+        with:
+          node-version: "${{ matrix.node-version }}"
+      - name: "VulnerabilityCheckNow"
+        run: |
+          npm install -D npm-check-updates
+          npx ncu -u
+      - if: github.ref == 'refs/heads/main'
+        name: "HerokuDeploy"
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "profsend"
+          heroku_email: "${{secrets.MY_EMAIL}}"
+          usedocker: true
+      - env:
+          CI: true
+        name: "repositry push"
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "profsend_source-CI"
+          git config user.email "gutsmine910@gmail.com"
+          git checkout main
+          git add .
+          git commit -m "[CI]Vulnerability check ok"
+          git push origin main
+      - if: github.ref == 'refs/heads/dev'
+        run: |
+          git config user.name "profsend_source-CI"
+          git config user.email "gutsmine910@gmail.com"
+          git checkout dev
+          git add .
+          git commit -m "[CI]Vulnerability check ok"
+          git push origin dev
