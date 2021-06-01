@@ -19,7 +19,8 @@ jobs:
         run: |
           npm install
           npm install -D npm-check-updates
-          npx ncu -u
+          data >> packageUpdates.md
+          npx ncu -u >> packageUpdates.md
           npm install
       - if: github.ref == 'refs/heads/main'
         name: "HerokuDeploy"
@@ -36,11 +37,7 @@ jobs:
         run: |
           git config user.name "profsend_source-CI"
           git config user.email "gutsmine910@gmail.com"
-          git remote set-url origin https://gumieprof:${{ secrets.GITHUB_PASS }}@github.com/gumieProf/profsend-source
-          git branch
           git checkout main
-          git branch
-          date >> CItime.md
           git add .
           git commit -m "[CI]Vulnerability check ok"
           git push origin main
@@ -48,11 +45,7 @@ jobs:
         run: |
           git config user.name "profsend_source-CI"
           git config user.email "gutsmine910@gmail.com"
-          git remote set-url origin https://gumieprof:${{ secrets.GITHUB_PASS }}@github.com/gumieProf/profsend-source
-          git branch
           git checkout dev
-          git branch
-          date >> CItime.md
           git add .
           git commit -m "[CI]Vulnerability check ok"
           git push origin dev
