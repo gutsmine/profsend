@@ -32,7 +32,6 @@ jobs:
       - env:
           CI: true
         name: "repositry push"
-        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           git config user.name "profsend_source-CI"
           git config user.email "gutsmine910@gmail.com"
