@@ -17,11 +17,8 @@ jobs:
           node-version: "${{ matrix.node-version }}"
       - name: "VulnerabilityCheckNow"
         run: |
-          npm install
           npm install -D npm-check-updates
-          data >> packageUpdates.md
-          npx ncu -u >> packageUpdates.md
-          npm install
+          npx ncu -u
       - if: github.ref == 'refs/heads/main'
         name: "HerokuDeploy"
         uses: akhileshns/heroku-deploy@v3.12.12
