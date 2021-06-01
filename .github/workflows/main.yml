@@ -2,10 +2,9 @@ name: Vulnerability check
 
 on:
   schedule:
-    - cron: "0 7 1 * *"
+    - cron: "0 7 1,15 * *"
   push:
     branches:
-      - main
 
 jobs:
   deploy:
@@ -22,7 +21,8 @@ jobs:
           npm install -D npm-check-updates
           npx ncu -u
           npm install
-      - name: "HerokuDeploy"
+      - if: github.ref == 'refs/heads/main'
+        name: "HerokuDeploy"
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
